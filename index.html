@@ -196,6 +196,11 @@ footer span{color:var(--neon)}
 @keyframes glitch2{0%,90%,100%{transform:translate(0)}93%{transform:translate(3px,1px);filter:hue-rotate(-90deg)}95%{transform:translate(-3px,-1px)}97%{transform:translate(2px,0)}}
 @keyframes typewriter{from{width:0}to{width:100%}}
 
+@media(hover:none),(pointer:coarse){
+  #cursor,#cursor-ring{display:none !important}
+  body{cursor:auto !important}
+  button,a{cursor:pointer !important}
+}
 @media(max-width:768px){
   .side-deco,.corner,.scroll-indicator{display:none}
   nav{padding:0.8rem 1.2rem}
