@@ -159,6 +159,27 @@ section{position:relative;z-index:1;min-height:100vh;display:flex;align-items:ce
 .skill-bar-fill.animated{transform:scaleX(1)}
 .skill-percent{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:4px;text-align:right}
 
+/* PROJECTS */
+#projects{min-height:auto;padding:4rem 5rem;background:radial-gradient(ellipse 600px 400px at 20% 50%,rgba(255,107,53,.03) 0%,transparent 70%)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.project-card{background:var(--card);border:1px solid rgba(255,107,53,.2);padding:1.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .4s,box-shadow .4s;transform-style:preserve-3d;display:flex;flex-direction:column;gap:.8rem}
+.project-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#ff6b35;box-shadow:0 0 10px #ff6b35}
+.project-card:hover{border-color:#ff6b35;transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 20px rgba(255,107,53,.15)}
+.project-soon{border-style:dashed;opacity:.6}
+.project-soon::before{background:var(--neon2);box-shadow:0 0 10px var(--neon2)}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start}
+.project-icon{font-size:2rem}
+.project-links{display:flex;gap:.6rem}
+.project-link{display:flex;align-items:center;gap:5px;padding:5px 12px;border:1px solid rgba(255,107,53,.4);color:#ff6b35;text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:1px;transition:all .3s;border-radius:2px}
+.project-link:hover{background:#ff6b35;color:var(--bg);box-shadow:0 0 12px rgba(255,107,53,.4)}
+.project-name{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--text);letter-spacing:1px}
+.project-desc{font-size:.82rem;color:var(--muted);line-height:1.6;flex:1}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tag{padding:3px 10px;border:1px solid rgba(255,107,53,.25);color:rgba(255,107,53,.8);font-size:.68rem;letter-spacing:1px;font-family:'Share Tech Mono',monospace;background:rgba(255,107,53,.05);border-radius:2px}
+.project-footer{display:flex;justify-content:space-between;align-items:center;margin-top:.4rem;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.05)}
+.project-status{font-family:'Share Tech Mono',monospace;font-size:.72rem;color:var(--neon3)}
+.project-num{font-family:'Orbitron',monospace;font-size:.65rem;color:rgba(255,107,53,.3);letter-spacing:2px}
+
 /* CONTACT */
 #contact{background:rgba(10,10,26,.6)}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem;margin-top:2rem}
@@ -218,7 +239,8 @@ footer span{color:var(--neon)}
   .avatar-3d-wrapper{width:180px;height:180px}
 
   /* skills — 1 column on mobile */
-  #skills{padding:3rem 1.2rem}
+  #projects{padding:3rem 1.2rem}
+  .projects-grid{grid-template-columns:1fr !important}
   .skills-grid{grid-template-columns:1fr !important;gap:1rem}
   .skill-card{padding:1.2rem}
 
@@ -276,6 +298,7 @@ footer span{color:var(--neon)}
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -413,7 +436,67 @@ footer span{color:var(--neon)}
   </div>
 </section>
 
-<!-- DIVIDER 3 -->
+<!-- DIVIDER 3 — Projects -->
+<div class="divider">
+  <div class="divider-inner">
+    <div class="div-line" style="background:linear-gradient(to right,transparent,rgba(255,107,53,.45),transparent);box-shadow:0 0 12px rgba(255,107,53,.3)"></div>
+    <div class="div-dot" style="background:#ff6b35"></div>
+    <div class="div-diamond" style="border-color:#ff6b35;background:rgba(255,107,53,.15);color:#ff6b35"></div>
+    <div class="div-label" style="color:#ff6b35;text-shadow:0 0 10px #ff6b35">Projects</div>
+    <div class="div-diamond" style="border-color:#ff6b35;background:rgba(255,107,53,.15);animation-delay:.4s"></div>
+    <div class="div-dot" style="background:#ff6b35;animation-delay:.3s"></div>
+    <div class="div-line" style="background:linear-gradient(to right,transparent,rgba(255,107,53,.45),transparent);box-shadow:0 0 12px rgba(255,107,53,.3)"></div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// What I've built</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line" style="background:linear-gradient(to right,#ff6b35,transparent)"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon">🌤️</div>
+          <div class="project-links">
+            <a href="https://weather-app-zeta-lyart-28.vercel.app" target="_blank" class="project-link">
+              <span>Live Demo</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-name">Weather App</h3>
+        <p class="project-desc">A real-time weather application that fetches live weather data for any city. Built as my first web development project — clean UI, live data, fully functional.</p>
+        <div class="project-tags">
+          <span class="proj-tag">HTML</span>
+          <span class="proj-tag">CSS</span>
+          <span class="proj-tag">JavaScript</span>
+          <span class="proj-tag">Weather API</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status">✅ Live on Vercel</span>
+          <span class="project-num">#001</span>
+        </div>
+      </div>
+
+      <!-- More coming soon card -->
+      <div class="project-card project-soon">
+        <div class="project-top"><div class="project-icon">🚀</div></div>
+        <h3 class="project-name" style="color:var(--muted)">More Coming Soon...</h3>
+        <p class="project-desc" style="color:rgba(136,136,170,.5)">Currently working on new projects. Stay tuned for updates!</p>
+        <div class="project-footer">
+          <span class="project-status" style="color:var(--neon2)">🔧 In Progress</span>
+          <span class="project-num" style="color:rgba(136,136,170,.3)">#002</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER 4 — Contact -->
 <div class="divider">
   <div class="divider-inner">
     <div class="div-line"></div>
@@ -626,7 +709,18 @@ if(!isTouch){
     });
   });
 
-  /* ── 6b. 3D TILT — contact cards ── */
+  /* ── 6c. 3D TILT — project cards ── */
+  document.querySelectorAll('.project-card:not(.project-soon)').forEach(card=>{
+    card.addEventListener('mousemove', e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width - 0.5;
+      const y=(e.clientY-r.top)/r.height - 0.5;
+      card.style.transform=`perspective(600px) rotateX(${-y*12}deg) rotateY(${x*12}deg) translateY(-8px) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform='perspective(600px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
   document.querySelectorAll('.contact-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
       const r=card.getBoundingClientRect();
